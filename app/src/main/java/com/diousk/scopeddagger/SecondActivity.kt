@@ -15,8 +15,8 @@ class SecondActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val sessionManager = (application as App).appComponent.sessionManager()
-        Timber.d("sessionManager = $sessionManager")
         sessionManager.userComponent?.injector()?.inject(this)
+        Timber.d("sessionManager = $sessionManager")
         Timber.d("userPrefs = $userPrefs")
 
         super.onCreate(savedInstanceState)
