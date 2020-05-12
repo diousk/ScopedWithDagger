@@ -1,6 +1,5 @@
 package com.diousk.scopeddagger.di.user
 
-import android.app.Activity
 import com.diousk.scopeddagger.di.scope.LoggedUserScope
 import dagger.Subcomponent
 import dagger.android.DispatchingAndroidInjector
@@ -13,5 +12,5 @@ interface UserComponent {
         fun create(): UserComponent
     }
 
-    fun injector(): DispatchingAndroidInjector<Activity>
+    fun injector(): DispatchingAndroidInjector<Any>
 }

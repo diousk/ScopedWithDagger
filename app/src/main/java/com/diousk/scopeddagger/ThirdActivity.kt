@@ -9,22 +9,19 @@ import kotlinx.android.synthetic.main.activity_third.*
 import timber.log.Timber
 import javax.inject.Inject
 
-class ThirdActivity : AppCompatActivity() {
+class ThirdActivity : DaggerSessionActivity() {
     @Inject
-    lateinit var injectedSessionManager: SessionManager
+    lateinit var sessionManager: SessionManager
 
     @Inject
     lateinit var userPrefs: UserPrefs
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val sessionManager = (application as App).appComponent.sessionManager()
-        sessionManager.userComponent?.injector()?.inject(this)
-        Timber.d("sessionManager = $sessionManager")
-        Timber.d("injectedSessionManager = $injectedSessionManager")
-        Timber.d("userPrefs = $userPrefs")
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_third)
+
+        Timber.d("userPrefs = $userPrefs")
+        Timber.d("sessionManager = $sessionManager")
 
         btnGoMain.setOnClickListener {
             sessionManager.logout()

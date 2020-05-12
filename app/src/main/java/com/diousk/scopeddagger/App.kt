@@ -15,6 +15,7 @@ class App : DaggerApplication() {
     override fun onCreate() {
         super.onCreate()
         Timber.plant(Timber.DebugTree())
+        Timber.d("androidInjector() = ${androidInjector()}")
     }
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
