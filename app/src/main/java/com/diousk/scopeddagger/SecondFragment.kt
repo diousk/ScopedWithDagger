@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.diousk.scopeddagger.deps.SessionManager
-import com.diousk.scopeddagger.deps.UserPrefs
+import com.diousk.scopeddagger.deps.SessionPrefs
 import dagger.android.support.DaggerFragment
 import timber.log.Timber
 import javax.inject.Inject
@@ -16,7 +16,7 @@ class SecondFragment : DaggerFragment() {
     lateinit var sessionManager: SessionManager
 
     @Inject
-    lateinit var userPrefs: UserPrefs
+    lateinit var sessionPrefs: SessionPrefs
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,7 +28,7 @@ class SecondFragment : DaggerFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Timber.d("userPrefs = $userPrefs")
+        Timber.d("sessionPrefs = $sessionPrefs")
         Timber.d("sessionManager = $sessionManager")
     }
 }

@@ -1,7 +1,8 @@
-package com.diousk.scopeddagger
+package com.diousk.scopeddagger.di.session
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.diousk.scopeddagger.App
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
@@ -13,7 +14,7 @@ abstract class DaggerSessionActivity : AppCompatActivity(), HasAndroidInjector {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val sessionManager = (application as App).appComponent.sessionManager()
-        sessionManager.userComponent?.injector()?.inject(this)
+        sessionManager.sessionComponent?.injector()?.inject(this)
         super.onCreate(savedInstanceState)
     }
 

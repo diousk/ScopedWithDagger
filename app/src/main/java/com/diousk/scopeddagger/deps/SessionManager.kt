@@ -1,7 +1,7 @@
 package com.diousk.scopeddagger.deps
 
 import android.content.Context
-import com.diousk.scopeddagger.di.user.UserComponent
+import com.diousk.scopeddagger.di.session.SessionComponent
 import timber.log.Timber
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -9,20 +9,20 @@ import javax.inject.Singleton
 @Singleton
 class SessionManager @Inject constructor(
     context: Context,
-    private val userComponentFactory: UserComponent.Factory
+    private val sessionComponentFactory: SessionComponent.Factory
 ) {
-    var userComponent: UserComponent? = null
+    var sessionComponent: SessionComponent? = null
         private set
 
     init {
-        Timber.d("SessionManager init, userComponentFactory = $userComponentFactory")
+        Timber.d("SessionManager init, sessionComponentFactory = $sessionComponentFactory")
     }
 
-    fun isUserLoggedIn() = userComponent != null
+    fun isUserLoggedIn() = sessionComponent != null
 
     fun logout() {
         Timber.d("SessionManager logout")
-        userComponent = null
+        sessionComponent = null
     }
 
     fun loginUser() {
@@ -31,8 +31,8 @@ class SessionManager @Inject constructor(
     }
 
     private fun userJustLoggedIn() {
-        if (userComponent == null) {
-            userComponent = userComponentFactory.create()
+        if (sessionComponent == null) {
+            sessionComponent = sessionComponentFactory.create()
         }
     }
 }

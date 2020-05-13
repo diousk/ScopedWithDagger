@@ -1,7 +1,7 @@
 package com.diousk.scopeddagger.di
 
-import com.diousk.scopeddagger.di.user.UserComponent
+import com.diousk.scopeddagger.di.session.SessionComponent
 import dagger.Module
 
-@Module(subcomponents = [UserComponent::class])
+@Module(subcomponents = [SessionComponent::class])
 class AppSubcomponents
