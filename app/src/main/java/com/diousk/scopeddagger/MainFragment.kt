@@ -10,7 +10,7 @@ import dagger.android.support.DaggerFragment
 import timber.log.Timber
 import javax.inject.Inject
 
-class SecondFragment : DaggerFragment() {
+class MainFragment : DaggerFragment() {
 
     @Inject
     lateinit var sessionManager: SessionManager

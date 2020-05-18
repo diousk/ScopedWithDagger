@@ -1,8 +1,8 @@
 package com.diousk.scopeddagger.di.session
 
-import com.diousk.scopeddagger.SecondActivity
-import com.diousk.scopeddagger.SecondFragment
-import com.diousk.scopeddagger.ThirdActivity
+import com.diousk.scopeddagger.MainActivity
+import com.diousk.scopeddagger.MainFragment
+import com.diousk.scopeddagger.SettingActivity
 import com.diousk.scopeddagger.di.scope.ActivityScope
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -11,15 +11,15 @@ import dagger.android.ContributesAndroidInjector
 abstract class SessionActivityBuilder {
     @ActivityScope
     @ContributesAndroidInjector(modules = [SecondModule::class])
-    abstract fun bindSecondActivity(): SecondActivity
+    abstract fun bindSecondActivity(): MainActivity
 
     @ActivityScope
     @ContributesAndroidInjector
-    abstract fun bindThirdActivity(): ThirdActivity
+    abstract fun bindThirdActivity(): SettingActivity
 }
 
 @Module
 abstract class SecondModule {
     @ContributesAndroidInjector
-    abstract fun bindSecondFragment(): SecondFragment
+    abstract fun bindSecondFragment(): MainFragment
 }
