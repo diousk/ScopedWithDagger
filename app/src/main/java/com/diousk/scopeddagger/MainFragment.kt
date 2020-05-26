@@ -28,7 +28,6 @@ class MainFragment : DaggerFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Timber.d("sessionPrefs = $sessionPrefs")
-        Timber.d("sessionManager = $sessionManager")
+        Timber.d("main fragment sessionPrefs = $sessionPrefs")
     }
 }

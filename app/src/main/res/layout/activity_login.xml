@@ -7,10 +7,10 @@
     tools:context=".LoginActivity">
 
     <Button
-        android:id="@+id/btnGoSecond"
+        android:id="@+id/goMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go Second"
+        android:text="Go Main"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

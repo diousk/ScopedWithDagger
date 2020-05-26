@@ -18,7 +18,7 @@ class MainActivity : DaggerSessionActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Timber.d("sessionPrefs = $sessionPrefs")
+        Timber.d("main sessionPrefs = $sessionPrefs")
 
         goSetting.setOnClickListener {
             startActivity(Intent(this, SettingActivity::class.java))

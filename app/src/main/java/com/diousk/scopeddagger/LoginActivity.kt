@@ -15,9 +15,9 @@ class LoginActivity : DaggerAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        Timber.d("sessionManager = $sessionManager")
+        Timber.d("login sessionManager = $sessionManager")
 
-        btnGoSecond.setOnClickListener {
+        goMain.setOnClickListener {
             sessionManager.loginUser()
             startActivity(Intent(this, MainActivity::class.java))
         }

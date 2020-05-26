@@ -20,10 +20,9 @@ class SettingActivity : DaggerSessionActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setting)
 
-        Timber.d("sessionPrefs = $sessionPrefs")
-        Timber.d("sessionManager = $sessionManager")
+        Timber.d("setting sessionPrefs = $sessionPrefs")
 
-        btnGoMain.setOnClickListener {
+        btnLogout.setOnClickListener {
             sessionManager.logout()
             startActivity(Intent(this, LoginActivity::class.java).apply {
                 addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
